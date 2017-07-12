@@ -15,12 +15,14 @@ header {
 h1 {
   color: #C9EFFF;
   margin: 0;
+  max-width: 900px;
   padding: 20px 15px;
 }
 
 /* main */
 main {
   padding: 0 15px;
+  max-width: 900px;
 }
 h2 {
   color: #04005C;
@@ -57,13 +59,11 @@ footer p{
 @media screen and (min-width: 900px) {
   h1 {
     margin: auto;
-    width: 900px;
     padding: 20px 30px;
   }
   /* main */
   main {
     margin: auto;
-    width: 900px;
     padding: 0 30px;
   }
   main p{
