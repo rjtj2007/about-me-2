@@ -21,7 +21,7 @@ var answer = [
   ['Yes! Ron loves animals, his spirit animal is a Pomeranian', 'In fact Ron loves animals, his spirit animal is a Pomeranian', 'yes' || 'y'],
   ['That\'s correct! Ron hates Seattle traffic. Do you like seattle traffic?', 'The correct answer is No. Seattle traffic is the worst!!', 'no' || 'n'],
   ['Yes, Ron loves Seattle', 'Actually, Ron thinks Seattle is great!', 'yes' || 'y'],
-  Math.ceil(Math.random() * 20 ), ['pizza, burgers, sushi, steak']
+  Math.ceil(Math.random() * 20), ['pizza', 'burgers', 'sushi', 'steak']
 ];
 
 ///// GAME /////
@@ -50,11 +50,11 @@ while (counter < 4){
     console.log('too high ', guess);
   }
   // if too low
-  if (guess < answer[5]) {
+  else if (guess < answer[5]) {
     console.log('too low ', guess);
   }
   // if correct
-  if (guess === answer[5]) {
+  else if (guess === answer[5]) {
     console.log('That\'s correct!!! ', guess);
     score++;
     // counter = 7; // super hack way of doint it
@@ -69,26 +69,22 @@ counter = 0;
 
 console.log(answer[6]);
 
-while (counter < 6){
-  console.log (counter);
-  var guess = parseInt(prompt(question[5]));
-  // if too high
-  if (guess > answer[5]) {
-    console.log('too high ', guess);
-  }
-  // if too low
-  if (guess < answer[5]) {
-    console.log('too low ', guess);
-  }
-  // if correct
-  if (guess === answer[5]) {
-    console.log('That\'s correct!!! ', guess);
-    score++;
-    // counter = 7; // super hack way of doint it
-    break;
+while (counter < 7) {
+  console.log(counter);
+  var food = prompt(question[6]).toLowerCase();
+  food = 'pizza';
+  for (var i = 0; i < answer[6].length; i++) {
+    console.log(answer[6][i]);
+    if (answer[6][i] === food) {
+      console.log('That\'s right, I actually love pizza, burgers, sushi, and steak');
+      counter = 7;
+    } else {
+      console.log('Please try again')
+    }
+
   }
   counter++;
-  console.log(counter);
+  //console.log(counter, food);
 }
 
 
