@@ -1,18 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 /* general */
-body{
+body {
   margin: 0;
   padding: 0;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 /* header */
-header{
-
+header {
+  background: #04005C;
 }
-h1
+
+h1 {
+  color: #C9EFFF;
+  margin: 0;
+  padding: 20px 15px;
+}
 
 /* main */
-main
+main {
+  padding: 0 15px;
+}
+h2 {
+  color: #04005C;
+  font-size: 1.8em;
+  margin-bottom: 5px;
 
-/* header */
-footer
+}
+
+/* footer */
+footer {
+margin: 0;
+  color: #C9EFFF;
+}
+
+footer p{
+  text-align: center;
+  margin: 0;
+  padding: 20px 10px;
+  background: #000000;
+
+}
+
+/* for bigger screens */
+@media screen and (min-width: 500px) {
+  h1 {
+    padding: 20px 30px;
+  }
+  /* main */
+  main {
+    padding: 0 30px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  h1 {
+    margin: auto;
+    width: 900px;
+    padding: 20px 30px;
+  }
+  /* main */
+  main {
+    margin: auto;
+    width: 900px;
+    padding: 0 30px;
+  }
+  main p{
+    padding-left: 20px;
+  }
+}
