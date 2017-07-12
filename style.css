@@ -50,6 +50,7 @@ footer p{
   h1 {
     padding: 20px 30px;
   }
+  
   /* main */
   main {
     padding: 0 30px;
@@ -61,11 +62,13 @@ footer p{
     margin: auto;
     padding: 20px 30px;
   }
+
   /* main */
   main {
     margin: auto;
     padding: 0 30px;
   }
+
   main p{
     padding-left: 20px;
   }
