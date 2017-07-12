@@ -1,4 +1,4 @@
-# about-me
+# About-me
 About me project for Code 201 in July 2017
 ___
 ## Core tasks I need to accomplish
@@ -21,3 +21,4 @@ ___
 
 - put all the questions and answers in arrays
 - make the guessing game number random
+- make the html and css more pleasing

@@ -1,20 +1,30 @@
 'use strict';
 // type some questions with answers to who am I as a little intro, questions should be fun
 
-var tacos = prompt('Does Ron likes tacos?');
-console.log('The user answered ' + tacos);
-if (tacos.toLowerCase() === 'yes') {
-  alert('Absolutely, Ron really likes tacos');
-} else {
-  alert('Actually, Ron really likes tacos');
-}
+var score = 0;
 
-var coffee = prompt('Does Ron likes coffee?');
-if (coffee.toLowerCase() === 'yes') {
-  alert('Yah... Ron\'s veins are overflown with coffee');
-} else {
-  alert('Ron requires coffee to survive');
-}
+var questions = [
+  'Does Ron likes tacos?',
+  'Does Ron likes coffee?',
+  'Does Ron likes animals?',
+  'Does Ron likes Seattle traffic?',
+  'Does Ron likes Seattle?',
+  'Please guess a random number from 1 to 20',
+  'Can you guess any other food Ron likes to eat?'
+];
+
+var answers = [
+  ['Absolutely, Ron really likes tacos', 'Actually, Ron really likes tacos'],
+  ['Yah... Ron\'s veins are overflown with coffee', 'Ron requires coffee to survive'],
+  [],
+  [],
+  [], Math.ceil(Math.random() * 20), []
+];
+
+
+
+/*
+
 
 var animals = prompt('Does Ron likes animals?');
 if (animals.toLowerCase() === 'yes') {
@@ -36,3 +46,9 @@ if (city.toLowerCase() === 'yes') {
 } else {
   alert('Actually, Ron thinks Seattle is great!');
 }
+*/
+
+
+
+
+['Does Ron likes tacos?', 'Does Ron likes coffee?', 'Does Ron likes animals?', 'Does Ron likes Seattle traffic?', 'Does Ron likes Seattle?'];
