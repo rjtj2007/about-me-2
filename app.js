@@ -39,56 +39,62 @@ var funResponse = [
 
 ///// GAME /////
 // yes and no questions?
-
-for (var i = 0; i < 5; i++) {
-  var response = prompt(question[i]);
-  if (response.toLowerCase() === answer[i][2]) {
-    console.log('User answered ' + response);
-    alert(answer[i][0]);
-    score++;
-  } else {
-    alert(answer[i][1]);
+function yesOrNoQuestions() {
+  for (var i = 0; i < 5; i++) {
+    var response = prompt(question[i]);
+    if (response.toLowerCase() === answer[i][2]) {
+      console.log('User answered ' + response);
+      alert(answer[i][0]);
+      score++;
+    } else {
+      alert(answer[i][1]);
+    }
   }
 }
+// yesOrNoQuestions();
 
-console.log(answer[5]);
+
+
 
 // Guess the number
-numberOfGuesses = 4;
-while (counter <= 4) {
-  if (numberOfGuesses === 0) {
-    alert('Well... you have no more guesses');
-    console.log('I said it... you suck at guessing!');
-    break;
-  }
+console.log(answer[5]);
 
-  var guess = parseInt(prompt(question[5]));
+function numberGame() {
+  numberOfGuesses = 4;
+  while (counter <= 4) {
+    if (numberOfGuesses === 0) {
+      alert('Well... you have no more guesses');
+      console.log('I said it... you suck at guessing!');
+      break;
+    }
 
-  // if too high
-  if (guess > answer[5]) {
-    numberOfGuesses--;
-    alert(guess + ' is too high , you have ' + numberOfGuesses + ' guesses left');
-    console.log('User input too high, you have ' + numberOfGuesses + ' guesses left', guess);
-  }
-  // if too low
-  else if (guess < answer[5]) {
-    numberOfGuesses--;
-    alert(guess + ' is too low, you have ' + numberOfGuesses + ' guesses left');
-    console.log('User input too low ' + numberOfGuesses + ' guesses left', guess);
-  }
-  // if correct
-  else if (guess === answer[5]) {
-    alert('That\'s correct!!! ' + guess + ' is the right answer!');
-    score++;
-    console.log('Correct response of ', guess);
-    break;
-  }
+    var guess = parseInt(prompt(question[5]));
+
+    // if too high
+    if (guess > answer[5]) {
+      numberOfGuesses--;
+      alert(guess + ' is too high , you have ' + numberOfGuesses + ' guesses left');
+      console.log('User input too high, you have ' + numberOfGuesses + ' guesses left', guess);
+    }
+    // if too low
+    else if (guess < answer[5]) {
+      numberOfGuesses--;
+      alert(guess + ' is too low, you have ' + numberOfGuesses + ' guesses left');
+      console.log('User input too low ' + numberOfGuesses + ' guesses left', guess);
+    }
+    // if correct
+    else if (guess === answer[5]) {
+      alert('That\'s correct!!! ' + guess + ' is the right answer!');
+      score++;
+      console.log('Correct response of ', guess);
+      break;
+    }
 
 
-  counter++;
+    counter++;
+  }
 }
-
-
+numberGame();
 
 // counter reset
 counter = 0;
