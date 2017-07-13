@@ -31,8 +31,30 @@ h2 {
 
 }
 
+ul, ol{
+  padding: 0;
+}
+
+li{
+  margin-top: 10px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #04005C;
+  list-style: none;
+}
+
+#work{
+  max-width: 800px;
+  margin: 0px auto;
+}
+
+.sideBySide{
+  width: 100%;
+  float: left;
+}
+
 /* footer */
 footer {
+  clear: left;
 margin: 0;
   color: #C9EFFF;
 }
@@ -50,11 +72,18 @@ footer p{
   h1 {
     padding: 20px 30px;
   }
-  
+
   /* main */
   main {
     padding: 0 30px;
   }
+
+  .sideBySide{
+    width: 40%;
+    margin-left: 5%;
+    margin-right: 5%
+  }
+
 }
 
 @media screen and (min-width: 900px) {
