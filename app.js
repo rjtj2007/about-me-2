@@ -9,8 +9,8 @@ var question = [
   'Does Ron likes tacos?',
   'Does Ron likes coffee?',
   'Does Ron likes animals?',
-  'Does Ron likes Seattle traffic?',
-  'Does Ron likes Seattle?',
+  'Did Ron lived in Tennessee?',
+  'Does Ron have any pets?',
   'Please guess a random number from 1 to 20',
   'Can you guess any other food Ron likes to eat?'
 ];
@@ -18,10 +18,10 @@ var question = [
 // first item inside answer is correct, second item is incorrect, third item is user response
 var answer = [
   ['Absolutely, Ron really likes tacos', 'Actually, Ron really likes tacos', 'yes'],
-  ['Yah... Ron\'s veins are overflown with coffee', 'Ron requires coffee to survive', 'yes'],
+  ['Yah!! Ron\'s veins are overflown with coffee', 'Ron requires coffee to survive', 'yes'],
   ['Yes! Ron loves animals, his spirit animal is a Pomeranian', 'In fact Ron loves animals, his spirit animal is a Pomeranian', 'yes'],
-  ['That\'s correct! Ron hates Seattle traffic. Do you like seattle traffic?', 'The correct answer is No. Seattle traffic is the worst!!', 'no'],
-  ['Yes, Ron loves Seattle', 'Actually, Ron thinks Seattle is great!', 'yes'],
+  ['That\'s right, He never lived there', 'He have never lived there before', 'no'],
+  ['That\s correct, he doesn\'t have any pets at the moment :(', 'He does not have pets but he really wants a dog', 'no'],
   Math.ceil(Math.random() * 20), ['pizza', 'burgers', 'sushi', 'steak']
 ];
 
@@ -51,6 +51,8 @@ for (var i = 0; i < 5; i++) {
   }
 }
 
+console.log(answer[5]);
+
 // Guess the number
 while (counter < 4) {
   var guess = parseInt(prompt(question[5]));
@@ -77,9 +79,8 @@ while (counter < 4) {
 counter = 0;
 
 // Guess food game
-console.log(answer[6]);
 while (counter < 7) {
-  console.log(counter);
+
   if (counter === 0) {
     food = prompt(question[6]).toLowerCase();
   } else {
