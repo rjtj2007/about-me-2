@@ -10,7 +10,7 @@ var question = [
   'Does Ron likes tacos?',
   'Does Ron likes coffee?',
   'Does Ron likes animals?',
-  'Did Ron lived in Tennessee?',
+  'Did Ron live in Tennessee?',
   'Does Ron have any pets?',
   'Please guess a random number from 1 to 20',
   'Can you guess any other food Ron likes to eat?'
@@ -51,10 +51,6 @@ function yesOrNoQuestions() {
     }
   }
 }
-// yesOrNoQuestions();
-
-
-
 
 // Guess the number
 console.log(answer[5]);
@@ -67,9 +63,7 @@ function numberGame() {
       console.log('I said it... you suck at guessing!');
       break;
     }
-
     var guess = parseInt(prompt(question[5]));
-
     // if too high
     if (guess > answer[5]) {
       numberOfGuesses--;
@@ -89,39 +83,47 @@ function numberGame() {
       console.log('Correct response of ', guess);
       break;
     }
-
-
     counter++;
   }
 }
-numberGame();
 
 // counter reset
-counter = 0;
-numberOfGuesses = 6;
-// Guess food game
-while (counter <= 6) {
-  if (numberOfGuesses === 0) {
-    alert('Well... you have no more guesses');
-    console.log('I said it... you suck at guessing!');
-    break;
-  }
-  if (counter === 0) {
-    food = prompt(question[6]).toLowerCase();
-  } else {
-    food = prompt('Please try again! ' + 'You have ' + numberOfGuesses + ' left. ' + question[6]).toLowerCase();
-  }
-  numberOfGuesses--;
-  for (var j = 0; j < answer[6].length; j++) {
-    if (answer[6][j] === food) {
-      alert('That\'s right, I actually love pizza, burgers, sushi, and steak');
-      score++;
-      counter = 7; // super hack way but whatevs
+function favFood() {
+  counter = 0;
+  numberOfGuesses = 6;
+  // Guess food game
+  while (counter <= 6) {
+    if (numberOfGuesses === 0) {
+      alert('Well... you have no more guesses');
+      console.log('I said it... you suck at guessing!');
+      break;
     }
+    if (counter === 0) {
+      food = prompt(question[6]).toLowerCase();
+    } else {
+      food = prompt('Please try again! ' + 'You have ' + numberOfGuesses + ' left. ' + question[6]).toLowerCase();
+    }
+    numberOfGuesses--;
+    for (var j = 0; j < answer[6].length; j++) {
+      if (answer[6][j] === food) {
+        alert('That\'s right, I actually love pizza, burgers, sushi, and steak');
+        score++;
+        counter = 7; // super hack way but whatevs
+      }
+    }
+    counter++;
   }
-  counter++;
 }
 
-alert('Your score is ' + score + ' out of ' + question.length + '. ' + funResponse[score]);
+// Final Score
+function finalResult() {
+  alert('Your score is ' + score + ' out of ' + question.length + '. ' + funResponse[score]);
 
-console.log('Your score is ' + score + ' out of ' + question.length);
+  console.log('Your score is ' + score + ' out of ' + question.length);
+}
+
+// function calls
+yesOrNoQuestions();
+numberGame();
+favFood();
+finalResult();
