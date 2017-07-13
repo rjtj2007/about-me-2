@@ -22,3 +22,7 @@ ___
 - put all the questions and answers in arrays
 - make the guessing game number random
 - make the html and css more pleasing
+
+### Contributor
+
+- Ryan Johnson (Lab 4 pier programing driver)
