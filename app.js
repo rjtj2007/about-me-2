@@ -75,6 +75,7 @@ while (counter < 4) {
   }
   counter++;
 }
+
 // counter reset
 counter = 0;
 
@@ -90,7 +91,7 @@ while (counter < 7) {
     if (answer[6][j] === food) {
       alert('That\'s right, I actually love pizza, burgers, sushi, and steak');
       score++;
-      counter = 7;
+      counter = 7; // super botch way but whatevs
     }
   }
   counter++;
