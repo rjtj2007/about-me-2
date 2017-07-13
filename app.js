@@ -3,6 +3,7 @@
 
 var score = 0;
 var counter = 0;
+var numberOfGuesses = 0;
 var food = '';
 
 var question = [
@@ -36,7 +37,6 @@ var funResponse = [
   'Wow!!! What a stalker!!! Yo'
 ];
 
-
 ///// GAME /////
 // yes and no questions?
 
@@ -54,17 +54,27 @@ for (var i = 0; i < 5; i++) {
 console.log(answer[5]);
 
 // Guess the number
-while (counter < 4) {
+numberOfGuesses = 4;
+while (counter <= 4) {
+  if (numberOfGuesses === 0) {
+    alert('Well... you have no more guesses');
+    console.log('I said it... you suck at guessing!');
+    break;
+  }
+
   var guess = parseInt(prompt(question[5]));
+
   // if too high
   if (guess > answer[5]) {
-    alert(guess + ' is too high');
-    console.log('User input too high ', guess);
+    numberOfGuesses--;
+    alert(guess + ' is too high , you have ' + numberOfGuesses + ' guesses left');
+    console.log('User input too high, you have ' + numberOfGuesses + ' guesses left', guess);
   }
   // if too low
   else if (guess < answer[5]) {
-    alert(guess + ' is too low');
-    console.log('User input too low ', guess);
+    numberOfGuesses--;
+    alert(guess + ' is too low, you have ' + numberOfGuesses + ' guesses left');
+    console.log('User input too low ' + numberOfGuesses + ' guesses left', guess);
   }
   // if correct
   else if (guess === answer[5]) {
@@ -73,25 +83,34 @@ while (counter < 4) {
     console.log('Correct response of ', guess);
     break;
   }
+
+
   counter++;
 }
 
+
+
 // counter reset
 counter = 0;
-
+numberOfGuesses = 6;
 // Guess food game
-while (counter < 7) {
-
+while (counter <= 6) {
+  if (numberOfGuesses === 0) {
+    alert('Well... you have no more guesses');
+    console.log('I said it... you suck at guessing!');
+    break;
+  }
   if (counter === 0) {
     food = prompt(question[6]).toLowerCase();
   } else {
-    food = prompt('Please try again! ' + question[6]).toLowerCase();
+    food = prompt('Please try again! ' + 'You have ' + numberOfGuesses + ' left. ' + question[6]).toLowerCase();
   }
+  numberOfGuesses--;
   for (var j = 0; j < answer[6].length; j++) {
     if (answer[6][j] === food) {
       alert('That\'s right, I actually love pizza, burgers, sushi, and steak');
       score++;
-      counter = 7; // super botch way but whatevs
+      counter = 7; // super hack way but whatevs
     }
   }
   counter++;
