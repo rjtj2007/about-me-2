@@ -42,6 +42,10 @@ li{
   list-style: none;
 }
 
+ol > li {
+  border-bottom: 1px solid #fd5d79;
+}
+
 #work{
   max-width: 800px;
   margin: 0px auto;
@@ -68,7 +72,8 @@ footer p{
 }
 
 /* for bigger screens */
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 400px) {
+
   h1 {
     padding: 20px 30px;
   }
